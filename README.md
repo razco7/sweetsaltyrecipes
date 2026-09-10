@@ -28,10 +28,10 @@ Plain HTML, CSS, and JavaScript. No framework, no build step, no
 ## Running locally
 
 ```bash
-python3 -m http.server 3456
+python3 -m http.server 3457
 ```
 
-Then open `http://localhost:3456`.
+Then open `http://localhost:3457`.
 
 ## Adding recipes
 

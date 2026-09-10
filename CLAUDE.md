@@ -8,8 +8,8 @@ plain HTML/CSS/JS. No build system, no framework, no package.json.
   (custom domain `sweetsaltyrecipes.com`, apex, DNS at IONOS). Migrated from
   `sweetsalty.info` in Sept 2026 — that domain now 301s here via Cloudflare;
   see `sweetsalty-domain-migration.md`.
-- **Local dev:** `python3 -m http.server 3456` from the project root (or use
-  the Browser pane's `preview_start` with the `sweet-salty` launch config)
+- **Local dev:** `python3 -m http.server 3457` from the project root (or use
+  the Browser pane's `preview_start` with the `sweetsaltyrecipes` launch config)
 
 ## Structure
 
