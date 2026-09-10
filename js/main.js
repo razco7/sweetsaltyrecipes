@@ -27,7 +27,7 @@ function showCookieBanner() {
   banner.innerHTML = `
     <div class="cookie-banner-header">
       <span class="cookie-banner-icon" aria-hidden="true">🍪</span>
-      <p>We use cookies to understand how visitors use this site, wherever in the world you're baking from.</p>
+      <p>Yes, a baking site with a cookie banner. These ones just count which recipes get opened.</p>
     </div>
     <div class="cookie-banner-actions">
       <button class="cookie-btn cookie-decline">Decline</button>

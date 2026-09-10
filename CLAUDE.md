@@ -335,7 +335,12 @@ be visibly wrong-sized for one frame before JS corrects it.
   golden-brown)** — it was deliberately removed from all button hover
   states; dark pill buttons hover to `#333` instead.
 - Grid breakpoints: recipe-grid is 4 cols by default (up to 1919px), 6 at
-  ≥1920px (3 at ≤1100px, 2 at ≤900px, 1 at ≤500px).
+  ≥1920px (3 at ≤1100px, 2 at ≤900px, 1 at ≤500px). **Exception: the
+  homepage's `#recipes` curated section** (a fixed 4 cards) has its own
+  `#recipes .recipe-grid` override — 4 → 2 at ≤1100px → 1 at ≤500px, skipping
+  the 3-col step so the 4th card never sits alone on a second row. The ID
+  selector outranks the plain `.recipe-grid` media rules, so those overrides
+  must live in the media queries too (they do).
 - Mobile nav (hamburger) kicks in at ≤900px — deliberately higher than the
   usual 768px, because the desktop nav items (All recipes / Top
   collections dropdown / About / Contact / Buy us a coffee) don't fit
