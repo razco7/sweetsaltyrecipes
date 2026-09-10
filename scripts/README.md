@@ -1,12 +1,28 @@
 # Scripts
 
-One-off maintenance tools for the site's SEO foundation. Nothing here runs
-as part of a build — the site itself has none (see the root `CLAUDE.md`).
-Run these by hand after editing recipes, or let the GitHub Actions
-workflow run the Search Console one on a schedule.
+One-off maintenance tools for the site's SEO foundation and shared markup.
+Nothing here runs as part of a build — the site itself has none (see the
+root `CLAUDE.md`). Run these by hand after editing recipes, or let the
+GitHub Actions workflow run the Search Console one on a schedule.
 
 ```bash
 pip install -r scripts/requirements.txt
+```
+
+## generate_nav.py
+
+Rewrites the site header — `<nav class="navbar">` and the
+`<div class="mobile-nav">` drawer — on every content page from one template
+in the script. The header has no include mechanism, so this is its single
+source of truth. Edit the template string or the `MENU` list (which drives
+the "All collections" mega-menu: Type / Country / Taste / Level), re-run,
+commit. Relative paths are computed per page depth; pages with no navbar
+(`404.html`, redirect stubs) are skipped. Re-run it after adding or removing
+a collection page, or changing any nav link.
+
+```bash
+python3 scripts/generate_nav.py            # rewrite every page
+python3 scripts/generate_nav.py --check    # report which pages would change
 ```
 
 ## generate_schema.py

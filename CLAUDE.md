@@ -25,7 +25,7 @@ js/main.js                 Single script for the whole site
 images/                    All photos + logo/icon SVGs + sweet-salty-logo.png (favicon source)
 fonts/                     Self-hosted Poppins woff2 (300/400/500/600/700, latin subset)
 sitemap.xml, robots.txt    Generated — see SEO & structured data below
-scripts/*.py               SEO generators + the Search Console report (see scripts/README.md)
+scripts/*.py               SEO generators, the nav generator, the Search Console report (see scripts/README.md)
 data/*.json                Hand-maintained inputs the generators can't derive on their own
                            (recipe-meta, pin-titles, meta-description-overrides, recipe-ideas)
 reports/*.md               Weekly Search Console reports (auto-committed, see below)
@@ -48,6 +48,27 @@ grep -rl 'styles.css?v=OLD' . --include="*.html" | xargs sed -i '' 's/styles\.cs
 `favicon.png` and `apple-touch-icon.png` carry `?v=N` too (browsers cache
 favicons especially hard). Bump those the same way if either image
 changes — currently `?v=2`.
+
+## Site header (navbar + mobile nav)
+
+The `<nav class="navbar">` and the `<div class="mobile-nav">` drawer are the
+same on every page but there's no include mechanism, so they're **generated**
+by `scripts/generate_nav.py` from one template. **Never hand-edit the header
+in a page** — edit `generate_nav.py` (the template string, or the `MENU` list
+that drives the "All collections" mega-menu), re-run it, and commit. It
+rewrites everything between `<nav class="navbar">` and
+`<div class="search-overlay">` on all ~40 content pages, fixing relative paths
+per page depth. Pages with no navbar (404.html, redirect stubs) are skipped.
+Re-run it after adding/removing a collection page or changing any nav link.
+It's not a cache-busting concern on its own, but the mega-menu's styles live
+in `styles.css` (`.nav-mega*`, `.mobile-mega-heading`) — bump `?v=N` if you
+touch those.
+
+The "All collections" menu lists only collections that have a dedicated page
+**and** at least one recipe, grouped Type / Country / Taste / Level. `Cake`
+and `Dessert` are deliberately absent (no dedicated page — they route to
+`sweet-recipes.html` via `TAG_LINKS`, and a menu item pointing at the same
+page as `Sweet` would just confuse).
 
 ## Favicon
 
@@ -140,8 +161,9 @@ the manual reference it's built from.
 
 Copy the structure of an existing simple recipe (e.g.
 `recipe-pages/italian-s-cookies.html` or `vanillekipferl.html`) rather than
-building from scratch — every recipe page shares: navbar, mobile nav,
-search overlay, `.recipe-hero` (photo | colored info panel), meta row
+building from scratch — every recipe page shares: navbar + mobile nav
+(generated — see "Site header" above; paste any placeholder, `generate_nav.py`
+overwrites it), search overlay, `.recipe-hero` (photo | colored info panel), meta row
 (Yield / Prep Time / Baking Time / Total Time — the third label is
 "Cooking Time" for stovetop recipes with no oven step, e.g. muhallebi,
 crêpe, french-toast), "What you'll need" + "Ingredients"
@@ -342,8 +364,8 @@ be visibly wrong-sized for one frame before JS corrects it.
   selector outranks the plain `.recipe-grid` media rules, so those overrides
   must live in the media queries too (they do).
 - Mobile nav (hamburger) kicks in at ≤900px — deliberately higher than the
-  usual 768px, because the desktop nav items (All recipes / Top
-  collections dropdown / About / Contact / Buy us a coffee) don't fit
+  usual 768px, because the desktop nav items (All recipes / All
+  collections mega-menu / About / Contact / Buy us a coffee) don't fit
   without wrapping below ~860px.
 - All font sizes are in `px`, not `rem`/`em`, sitewide (converted
   deliberately — don't reintroduce rem/em).
