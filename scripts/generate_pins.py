@@ -6,7 +6,7 @@ For each recipe, composites a 1000x1500 JPEG (pins/<slug>.jpg):
   - top 940px: the recipe's @2x photo (images/<slug>@2x.jpg), cover-cropped
   - a cream (#f5ead8) panel: title (Poppins 700) + a grey meta line
     (total time + yield), centered as one block in the panel
-  - a coral (#ff6d6d) footer bar: "sweetsalty.info"
+  - a coral (#ff6d6d) footer bar: "sweetsaltyrecipes.com"
 
 Then writes pins/pinterest-bulk-upload.csv for Pinterest's bulk-upload
 tool, with publish dates spread evenly starting tomorrow at 20:00.
@@ -49,7 +49,7 @@ IMAGES_DIR = ROOT / "images"
 PINS_DIR = ROOT / "pins"
 RECIPE_META = ROOT / "data" / "recipe-meta.json"
 PIN_TITLES = ROOT / "data" / "pin-titles.json"
-SITE_URL = "https://sweetsalty.info"
+SITE_URL = "https://sweetsaltyrecipes.com"
 
 PIN_W, PIN_H = 1000, 1500
 PHOTO_H = 940
@@ -189,7 +189,7 @@ def build_pin_image(recipe, title, meta_line, out_path):
     w = draw.textlength(meta_line, font=meta_font)
     draw.text(((PIN_W - w) / 2, y), meta_line, font=meta_font, fill=GREY)
 
-    footer_text = "sweetsalty.info"
+    footer_text = "sweetsaltyrecipes.com"
     fw = draw.textlength(footer_text, font=footer_font)
     fh = footer_font.getbbox("Ag")[3]
     draw.text(

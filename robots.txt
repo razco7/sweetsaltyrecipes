@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sweetsalty.info/sitemap.xml
+Sitemap: https://sweetsaltyrecipes.com/sitemap.xml

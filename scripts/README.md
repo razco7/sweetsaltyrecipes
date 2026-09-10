@@ -76,7 +76,7 @@ authenticate without your personal login or a browser OAuth flow.
    which is already in `.gitignore`.
 5. **Grant the service account access in Search Console**: in
    [Search Console](https://search.google.com/search-console), select
-   the `sweetsalty.info` **Domain property** (not the old `www`
+   the `sweetsaltyrecipes.com` **Domain property** (not the old `www`
    URL-prefix one) > Settings > Users and permissions > Add user. Enter
    the service account's email address (looks like
    `sweetsalty-search-console-reader@your-project.iam.gserviceaccount.com`
@@ -86,10 +86,10 @@ authenticate without your personal login or a browser OAuth flow.
 
 `GSC_SITE_URL` must match the property's identifier as the Search
 Console **API** expects it, which is not the same as its URL in the
-browser. Since `sweetsalty.info` is a **Domain property**, that's
-`sc-domain:sweetsalty.info` — no `https://`, no trailing slash. (A
+browser. Since `sweetsaltyrecipes.com` is a **Domain property**, that's
+`sc-domain:sweetsaltyrecipes.com` — no `https://`, no trailing slash. (A
 URL-prefix property would instead use its exact URL, e.g.
-`https://sweetsalty.info/`.) Using the wrong form doesn't error at
+`https://sweetsaltyrecipes.com/`.) Using the wrong form doesn't error at
 auth time — it authenticates fine and then fails with a 403
 "insufficient permission" on the actual query, which looks like a
 permissions problem rather than a formatting one.
@@ -98,7 +98,7 @@ permissions problem rather than a formatting one.
 
 ```bash
 export GSC_SERVICE_ACCOUNT_FILE=scripts/credentials/service-account.json
-export GSC_SITE_URL=sc-domain:sweetsalty.info
+export GSC_SITE_URL=sc-domain:sweetsaltyrecipes.com
 python3 scripts/search_console_report.py
 ```
 
@@ -112,7 +112,7 @@ commits the resulting report. It needs two repository secrets (Settings
 
 - `GSC_SERVICE_ACCOUNT_JSON` — the **entire contents** of the service
   account's JSON key file, pasted as the secret value.
-- `GSC_SITE_URL` — `sc-domain:sweetsalty.info`
+- `GSC_SITE_URL` — `sc-domain:sweetsaltyrecipes.com`
 
 The workflow writes that secret to a temporary file at runtime (never to
 the repo) and points `GSC_SERVICE_ACCOUNT_FILE` at it.
@@ -125,7 +125,7 @@ there any warnings/errors? Uses the same credentials as
 
 ```bash
 export GSC_SERVICE_ACCOUNT_FILE=scripts/credentials/service-account.json
-export GSC_SITE_URL=sc-domain:sweetsalty.info
+export GSC_SITE_URL=sc-domain:sweetsaltyrecipes.com
 python3 scripts/check_sitemap_status.py
 ```
 

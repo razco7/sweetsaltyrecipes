@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Pull the last 28 days of Search Console data for sweetsalty.info and write
+Pull the last 28 days of Search Console data for sweetsaltyrecipes.com and write
 a ranked-list report to reports/. Plain data pull and formatting — no LLM
 calls, no interpretation.
 
@@ -10,7 +10,7 @@ Produces three lists:
   - Working:            top pages by clicks (page only)
 
 Auth: a Google Cloud service account with Search Console API access,
-granted "Full" or "Restricted" access to the sweetsalty.info property in
+granted "Full" or "Restricted" access to the sweetsaltyrecipes.com property in
 Search Console (Settings > Users and permissions > Add user, using the
 service account's email). See README.md in this directory for the full
 one-time setup.
@@ -19,12 +19,12 @@ Credentials are read from environment variables only — never hardcoded,
 never committed:
   GSC_SERVICE_ACCOUNT_FILE  path to the service account's JSON key file
   GSC_SITE_URL              the property as verified in Search Console,
-                             e.g. "https://sweetsalty.info/" (URL-prefix
+                             e.g. "https://sweetsaltyrecipes.com/" (URL-prefix
                              property — matches how this site is verified)
 
 Usage:
   export GSC_SERVICE_ACCOUNT_FILE=/path/to/key.json
-  export GSC_SITE_URL=https://sweetsalty.info/
+  export GSC_SITE_URL=https://sweetsaltyrecipes.com/
   python3 scripts/search_console_report.py
 """
 import datetime

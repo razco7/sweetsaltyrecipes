@@ -227,7 +227,7 @@ loudly — that's intended.
   country (or is the first for a country that somehow lacks a page), create
   `collection-pages/<country>-recipes.html` following the compact template
   (`germany-recipes.html`): `<title>`, `og:*` + `twitter:*` (image
-  `https://sweetsalty.info/images/ingredients-banner.jpg`), `<h1><Country>
+  `https://sweetsaltyrecipes.com/images/ingredients-banner.jpg`), `<h1><Country>
   recipe collection</h1>`, a **one-sentence intro in the site's voice** (unique
   — don't reuse another country's), `<div class="recipe-grid"
   data-tag="<Country>"></div>`. Leave the SEO-tags and static-links blocks for

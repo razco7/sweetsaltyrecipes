@@ -2,7 +2,7 @@
 
 A recipe website for cookies, pastry, and desserts from around the world.
 
-🔗 **Live site:** [sweetsalty.info](https://sweetsalty.info)
+🔗 **Live site:** [sweetsaltyrecipes.com](https://sweetsaltyrecipes.com)
 
 ## About
 

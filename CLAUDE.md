@@ -3,8 +3,11 @@
 A static recipe website (cookies, pastry, desserts) migrated from Webflow to
 plain HTML/CSS/JS. No build system, no framework, no package.json.
 
-- **Live site:** https://sweetsalty.info
-- **GitHub Pages:** https://razco7.github.io/sweetsalty (custom domain via IONOS DNS)
+- **Live site:** https://sweetsaltyrecipes.com
+- **GitHub Pages:** repo `razco7/sweetsaltyrecipes`, `razco7.github.io/sweetsaltyrecipes`
+  (custom domain `sweetsaltyrecipes.com`, apex, DNS at IONOS). Migrated from
+  `sweetsalty.info` in Sept 2026 — that domain now 301s here via Cloudflare;
+  see `sweetsalty-domain-migration.md`.
 - **Local dev:** `python3 -m http.server 3456` from the project root (or use
   the Browser pane's `preview_start` with the `sweet-salty` launch config)
 
@@ -237,7 +240,7 @@ GitHub's servers, not in any chat session, so nothing surfaces on its own.
 Needs `GSC_SERVICE_ACCOUNT_FILE`/`GSC_SERVICE_ACCOUNT_JSON` and
 `GSC_SITE_URL` (repo secrets for the workflow, env vars locally) — full
 setup in `scripts/README.md`. **`GSC_SITE_URL` must be
-`sc-domain:sweetsalty.info`**, not the browser URL — `sweetsalty.info`
+`sc-domain:sweetsaltyrecipes.com`**, not the browser URL — `sweetsaltyrecipes.com`
 is a Domain property, and the URL form authenticates fine but then fails
 every query with a 403 that reads like a permissions bug.
 
@@ -281,14 +284,16 @@ pass (Lighthouse mobile Performance went from 66 to ~88):
 
 ## Site verification tags
 
-Two files/tags exist purely to prove domain ownership to third parties —
-don't remove either, and don't be confused by what looks like dead
-weight:
-- `googlebc8928ca4194ad24.html` (project root) — Google Search Console
-  verification. Its entire content is one line identifying itself; it's
-  never linked from anywhere on the site.
+Tags that exist purely to prove domain ownership to third parties — don't
+remove them, and don't be confused by what looks like dead weight:
 - `<meta name="p:domain_verify" ...>` in `index.html`'s `<head>` —
-  Pinterest's domain claim, checked only on the homepage.
+  Pinterest's domain claim, checked only on the homepage. **Still the old
+  `sweetsalty.info` token** — gets replaced with the `sweetsaltyrecipes.com`
+  token in migration Phase 2.1.
+- **Google Search Console** verification for `sweetsaltyrecipes.com` — added
+  in migration Phase 3.3 (HTML file or DNS TXT, whichever Google offers).
+  The old `sweetsalty.info` verification file (`googlebc8928ca4194ad24.html`)
+  was deleted in the migration — it verified nothing on the new domain.
 
 ## Redirect stubs
 
