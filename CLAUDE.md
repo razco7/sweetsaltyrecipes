@@ -287,9 +287,9 @@ pass (Lighthouse mobile Performance went from 66 to ~88):
 Tags that exist purely to prove domain ownership to third parties — don't
 remove them, and don't be confused by what looks like dead weight:
 - `<meta name="p:domain_verify" ...>` in `index.html`'s `<head>` —
-  Pinterest's domain claim, checked only on the homepage. **Still the old
-  `sweetsalty.info` token** — gets replaced with the `sweetsaltyrecipes.com`
-  token in migration Phase 2.1.
+  Pinterest's domain claim, checked only on the homepage. The token is
+  **account-scoped, not per-domain**, so it carried over from `sweetsalty.info`
+  unchanged and verifies `sweetsaltyrecipes.com` as-is.
 - **Google Search Console** verification for `sweetsaltyrecipes.com` — added
   in migration Phase 3.3 (HTML file or DNS TXT, whichever Google offers).
   The old `sweetsalty.info` verification file (`googlebc8928ca4194ad24.html`)
