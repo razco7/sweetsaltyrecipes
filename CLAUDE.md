@@ -223,6 +223,17 @@ ingredient use two different ratios across pages.
 Never give a quantity in the wrong unit dimension — sugar and other
 solids are grams, not millilitres (`3 tbsp (38g) sugar`, not `(45ml)`).
 
+## Dietary terminology
+
+This site isn't written for a specific religious audience, so avoid
+religion-specific dietary terms — `kosher`, `halal`, `pareve`/`parve`,
+etc. — even where technically accurate. Use the plain, universal
+equivalent instead: **"dairy-free"**, not "pareve"; describe an alcohol
+substitution directly rather than invoking a religious restriction. This
+applies to ingredient swaps, Tips & Notes, and any other on-page copy.
+(Example: `savory-syrian-kaak.html`'s butter→margarine tip reads "to make
+these dairy-free," not "to make them pareve.")
+
 ## SEO & structured data
 
 Four scripts (in `scripts/`, full docs in `scripts/README.md`) generate
