@@ -158,5 +158,13 @@
     "recipeYield": "12–14 slices",
     "author": "Sweet / Salty",
     "datePublished": "2026-09-09"
+  },
+  "linzer-torte": {
+    "prepTime": "PT40M",
+    "cookTime": "PT40M",
+    "totalTime": "PT3H30M",
+    "recipeYield": "10–12 slices",
+    "author": "Sweet / Salty",
+    "datePublished": "2026-10-17"
   }
 }
