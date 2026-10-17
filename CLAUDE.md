@@ -6,8 +6,14 @@ plain HTML/CSS/JS. No build system, no framework, no package.json.
 - **Live site:** https://sweetsaltyrecipes.com
 - **GitHub Pages:** repo `razco7/sweetsaltyrecipes`, `razco7.github.io/sweetsaltyrecipes`
   (custom domain `sweetsaltyrecipes.com`, apex, DNS at IONOS). Migrated from
-  `sweetsalty.info` in Sept 2026 — that domain now 301s here via Cloudflare;
-  see `sweetsalty-domain-migration.md`.
+  `sweetsalty.info` in Sept 2026. **The old domain does NOT 301 here yet** — as
+  of Oct 2026 it still serves a duplicate copy (HTTP 200 from GitHub, canonical
+  tags pointing at the new domain). The redirect is deliberately on hold: pins
+  on the old domain were reported as spam on Pinterest, and a 301 could tie the
+  new domain to those flagged pins. Revisit around mid-Jan 2027, once the new
+  domain has a couple of clean months of manual pinning, Pinterest account
+  health shows no flags, and Raz has decided what to do with the old pins. Then
+  add a Cloudflare redirect rule (old domain → new, path-preserving).
 - **Local dev:** `python3 -m http.server 3457` from the project root (or use
   the Browser pane's `preview_start` with the `sweetsaltyrecipes` launch config)
 
