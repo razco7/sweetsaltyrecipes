@@ -89,6 +89,7 @@ const ALL_RECIPES = [
   { title: 'Vanillekipferl', img: 'images/vanillekipferl.jpg', desc: 'Almond-shortbread crescents rolled warm in vanilla sugar', tags: ['Cookie','Austria','Sweet','Moderate'], page: 'recipe-pages/vanillekipferl.html', popular: false, date: '2026-08-29' },
   { title: 'Gevulde Koek', img: 'images/gevulde-koek.jpg', desc: 'Dutch shortcrust cookies filled with sweet almond paste', tags: ['Cookie','Netherlands','Sweet','Moderate'], page: 'recipe-pages/gevulde-koek.html', popular: false, date: '2026-09-08' },
   { title: 'Sachertorte', img: 'images/sachertorte.jpg', desc: "Dense Viennese chocolate cake, apricot jam, dark glaze", tags: ['Cake','Austria','Sweet','Hard'], page: 'recipe-pages/sachertorte.html', popular: false, date: '2026-09-09' },
+  { title: 'Linzer Torte', img: 'images/linzer-torte.jpg', desc: 'Spiced almond lattice tart over sharp redcurrant jam', tags: ['Cake','Austria','Sweet','Moderate'], page: 'recipe-pages/linzer-torte.html', popular: false, date: '2026-10-17' },
 ];
 
 const TAG_LINKS = {

@@ -44,5 +44,51 @@
     "status": "proposed",
     "proposed": "2026-09-09",
     "note": "Denmark backlog (+3). Cardamom enriched dough, cinnamon remonce, coiled + glazed. Targets autumn/winter (cinnamon/cardamom search climb). Distinct from Croissant (soft bun, not laminated). Moderate search volume under the Danish name — flagged."
+  },
+  {
+    "slug": "panettone",
+    "name": "Panettone",
+    "country": "Italy",
+    "type": "Pastry",
+    "status": "proposed",
+    "proposed": "2026-10-17",
+    "note": "Closes Italy (+1 -> 4) and adds a Hard (only 2 so far). Targets Christmas baking: search peaks late Nov-mid Dec; Pinterest lead time makes this the window. Very high demand."
+  },
+  {
+    "slug": "linzer-torte",
+    "name": "Linzer Torte",
+    "country": "Austria",
+    "type": "Cake",
+    "status": "published",
+    "proposed": "2026-10-17",
+    "note": "Closes Austria (+1 -> 4). Spiced nut lattice tart over redcurrant/raspberry jam. Christmas season. Different from Vanillekipferl and from any butter cookie. Good demand. Picked first from the 2026-10-17 set; PR open, awaiting Raz review + merge.",
+    "built": "2026-10-17"
+  },
+  {
+    "slug": "buttermilk-biscuits",
+    "name": "Buttermilk Biscuits",
+    "country": "USA",
+    "type": "Pastry",
+    "status": "proposed",
+    "proposed": "2026-10-17",
+    "note": "Closes USA (+1 -> 4) and adds a Salty (only 2 so far). Flaky laminated-ish biscuits; autumn/winter comfort baking, strong steady demand."
+  },
+  {
+    "slug": "stollen",
+    "name": "Christmas Stollen",
+    "country": "Germany",
+    "type": "Cake",
+    "status": "proposed",
+    "proposed": "2026-10-17",
+    "note": "Germany backlog (+3). Yeasted fruit-and-marzipan loaf, butter-brushed and sugared. Targets Christmas; peak search late Nov-Dec. Distinct from Gingerbread."
+  },
+  {
+    "slug": "burekas",
+    "name": "Burekas",
+    "country": "Middle East",
+    "type": "Pastry",
+    "status": "proposed",
+    "proposed": "2026-10-17",
+    "note": "Middle East backlog (+2). Puff-pastry parcels with cheese or potato filling. Adds a Salty. Evergreen, sits around Hanukkah timing. Moderate English volume - flagged."
   }
 ]
